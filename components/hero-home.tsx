@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
 import Avatar01 from "@/public/images/avatar-01.jpg";
@@ -6,8 +7,11 @@ import Avatar03 from "@/public/images/avatar-03.jpg";
 import Avatar04 from "@/public/images/avatar-04.jpg";
 import Avatar05 from "@/public/images/avatar-05.jpg";
 import Avatar06 from "@/public/images/avatar-06.jpg";
+import { useState } from "react";
 
 export default function HeroHome() {
+
+  const [showMore, setShowMore] = useState(false)
   return (
     <section className="relative">
       <PageIllustration />
@@ -17,10 +21,10 @@ export default function HeroHome() {
           {/* Section header */}
           <div className="pb-12 text-center md:pb-16">
             <div
-              className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]"
+              className="hidden mb-6 border-y [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]"
               data-aos="zoom-y-out"
             >
-              <div className="-mx-0.5 flex justify-center -space-x-3">
+              <div className="-mx-0.5 flex justify-center -space-x-3 hidden">
                 <Image
                   className="box-content rounded-full border-2 border-gray-50"
                   src={Avatar01}
@@ -70,19 +74,37 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              The website builder you're <br className="max-lg:hidden" />
-              looking for
+              National conference on<br className="max-lg:hidden" />
+              South Indian Muslims' role in India's independence
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
-                className="mb-8 text-lg text-gray-700"
+                className="mb-8 text-lg text-gray-700 mb-5"
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Simple is a modern website builder powered by AI that changes
-                how companies create user interfaces together.
+                October 10 -  Darunnoor Education Centre Kashipatna, Moodbidri - Karnataka
+
               </p>
-              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
+              <div className={showMore ? 'block' : 'hidden'}>
+                <Image
+                  alt="poster"
+                  src='/images/banner.jpg'
+                  width={500}
+                  height={500}
+                  className="my-5 mx-auto"
+                />
+                <b>Important Dates:</b> <b />
+
+                <ul>
+                  <li> Abstract submission deadline: 26 September 2024 </li>
+                  <li>   Confirmation of acceptance: 30 September 2024</li>
+                  <li>  Submission of full paper: 06 October 2024 </li>
+
+                </ul>
+              </div>
+
+              <div className="mt-4 relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
                 <div
                   className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"
                   data-aos="zoom-y-out"
@@ -90,21 +112,23 @@ export default function HeroHome() {
                 >
                   <a
                     className="btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="#0"
+                    href="https://forms.gle/axxVzhEkVfwGXZ2c8" target="_blank"
                   >
                     <span className="relative inline-flex items-center">
-                      Start Free Trial{" "}
+                      Send Abstract
                       <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
-                       
+
                       </span>
                     </span>
                   </a>
-                  <a
+                  <button onClick={() => {
+                    setShowMore(!showMore)
+                  }}
                     className="btn w-full bg-white text-gray-800 shadow hover:bg-gray-50 sm:ml-4 sm:w-auto"
-                    href="#0"
+
                   >
                     Learn More
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -146,7 +170,7 @@ export default function HeroHome() {
                 </span>
               </div>
             </div> */}
-            
+
           </div>
         </div>
       </div>
