@@ -22,12 +22,12 @@ export default function Header() {
               </Link> */}
             </li>
             <li>
-              <a
-                href="https://forms.gle/axxVzhEkVfwGXZ2c8" target="_blank"
+              <Link
+                href="/gallery" target="_blank"
                 className="btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900"
               >
-               Send Abstract
-              </a>
+               Gallery
+              </Link>
             </li>
           </ul>
         </div>

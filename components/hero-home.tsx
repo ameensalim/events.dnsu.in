@@ -8,6 +8,7 @@ import Avatar04 from "@/public/images/avatar-04.jpg";
 import Avatar05 from "@/public/images/avatar-05.jpg";
 import Avatar06 from "@/public/images/avatar-06.jpg";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function HeroHome() {
 
@@ -110,17 +111,17 @@ export default function HeroHome() {
                   data-aos="zoom-y-out"
                   data-aos-delay={450}
                 >
-                  <a
+                  <Link
                     className="btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="https://forms.gle/axxVzhEkVfwGXZ2c8" target="_blank"
+                    href="/gallery" target="_blank"
                   >
                     <span className="relative inline-flex items-center">
-                      Send Abstract
+                     Gallery
                       <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
 
                       </span>
                     </span>
-                  </a>
+                  </Link>
                   <button onClick={() => {
                     setShowMore(!showMore)
                   }}
