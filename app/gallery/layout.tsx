@@ -1,10 +1,19 @@
-import { title } from 'process';
+import { Metadata } from 'next';
 import React from 'react'
 
-export const metadata = {
-    title: "Gallery | National conference | Darunnoor Kashipatna",
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+export const metadata: Metadata = {
+    metadataBase: new URL(baseUrl!),
+    title: "Gallery | National Conference | Darunnoor Kashipatna",
     description: "October 10 - Darunnoor Education Centre Kashipatna, Moodbidri - Karnataka",
-}   
+    openGraph: {
+        images: ['/images/banner.jpg'],
+    },
+    twitter: {
+        images: ['/images/banner.jpg'],
+    },
+};
 
 function layout({
     children,
