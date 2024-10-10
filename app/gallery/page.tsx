@@ -35,14 +35,14 @@ function Page() {
             height={500}
               src="/images/banner.jpg"
               alt="Conference Poster"
-              className="w-[250px] rounded-lg shadow-lg mr-4"
+              className="w-1/2 rounded-lg shadow-lg mr-4"
             />
             <Image
             width={500}
             height={500}
               src="/images/gallery/banner2.jpg"
               alt="Conference Poster"
-              className="w-[250px] rounded-lg shadow-lg"
+              className="w-1/2 rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -66,7 +66,7 @@ function Page() {
       </div>
 
       <div className='bg-blue-950 py-6 text-center mt-20 text-white px-6 '>
-    Copyright © 2023 DNSU. All rights reserved.
+    Copyright © 2024 Thanveer Kashipatna. All rights reserved.
       </div>
     </div>
   );
